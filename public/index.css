@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    --gradient-a: rgb(69, 233, 104);
+    --gradient-b: rgb(5, 99, 28);
+}
+

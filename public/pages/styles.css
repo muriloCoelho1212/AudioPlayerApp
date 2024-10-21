@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    --gradient-a: rgb(69, 233, 104);
+    --gradient-b: rgb(5, 99, 28);
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: linear-gradient(45deg, --gradient-a, --gradient-b);
+
+}
+
+@keyframes gradient{
+    0% {
+        background-position: 0% 50%;
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+.music-player{
+    background: rgba(255,255,255 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
+}
+
+.cover img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
