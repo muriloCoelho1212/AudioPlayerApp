@@ -54,7 +54,7 @@
     {
         "id":4,
         "title":"automotivobibifogosa",
-        "cover":"../media/bibifogosa.jpeg",
+        "cover":"../media/bibifogosa.jpg",
         "author":"bibifogosa",
         "band":"bibifogosa",
         "album":"bibifogosa",
@@ -67,7 +67,7 @@
     {
         "id":5,
         "title":"cocotafeiapacaralho",
-        "cover":"imageurl",
+        "cover":"../media/cocota.jpg",
         "author":"unknown",
         "band":"unknown",
         "album":"single",
@@ -132,7 +132,7 @@
     {
         "id":10,
         "title":"Poker Face",
-        "cover":"../media/pokerface.jpeg",
+        "cover":"../media/lady.jpeg",
         "author":"Lady Gaga",
         "band":"Lady Gaga",
         "album":"The Fame",
@@ -145,7 +145,7 @@
     {
         "id":11,
         "title":"Judas",
-        "cover":"../media/judas.jpeg",
+        "cover":"../media/lady.jpeg",
         "author":"Lady Gaga",
         "band":"Lady Gaga",
         "album":"Born This Way",
