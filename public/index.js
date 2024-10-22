@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function(){
             const ctg = document.createElement('button');
             ctg.innerHTML = `<h5>${category.toLowerCase()}</h5>`;
             ctg.style.width = '100px'
+            ctg.onclick = () => {
+                window.location.href = `/pages/songlist.html?category=${category.toLowerCase()}`;
+            };
             ctgBox.appendChild(ctg);
         });
     })

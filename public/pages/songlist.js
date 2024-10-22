@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
 
-    fetch('../data/audiodata.json')
+    fetch('../content/data/audiodata.json')
     .then(response => response.json())
     .then(data => {
         data.map(entry => {
