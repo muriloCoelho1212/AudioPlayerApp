@@ -32,7 +32,7 @@
         "author":"Grover Washington Jr.",
         "band":"Grover Washington Jr.",
         "album":"Winelight",
-        "category":"Jazz",
+        "category":"jazz",
         "duration":"07:19",
         "description":"no description",
         "score":"5",
@@ -45,7 +45,7 @@
         "author":"Nirvana",
         "band":"Nirvana",
         "album":"In Utero",
-        "category":"Grunge",
+        "category":"grunge",
         "duration":"04:41",
         "description":"no description",
         "score":"4.8",
@@ -123,7 +123,7 @@
         "author":"Raul Seixas",
         "band":"Raul Seixas",
         "album":"Gita",
-        "category":"rock",
+        "category":"jazz",
         "duration":"03:49",
         "description":"no description",
         "score":"5",
@@ -206,5 +206,91 @@
         "description":"no description",
         "score":"5",
         "faixa":"idk"
+    }
+    {
+        "id":16,
+        "title":"Highway to Hell",
+        "cover":"../media/hell.jpeg",
+        "author":"AC/DC",
+        "band":"AC/DC",
+        "album":"single",
+        "category":"rock",
+        "duration":"03:28",
+        "description":"no description",
+        "score":"5",
+        "faixa":"idk" 
+    }
+    {
+        "id":17,
+        "title":"Another One Bites the Dust",
+        "cover":"../media/dust.jpeg",
+        "author":"Queen",
+        "band":"Queen",
+        "album":"single",
+        "category":"rock",
+        "duration":"03:43",
+        "description":"no description",
+        "score":"5",
+        "faixa":"idk"
+    }
+    {
+        "id":18,
+        "title":"Moon River",
+        "cover":"../media/moon.jpeg",
+        "author":"Louis Armstrong",
+        "band":"Louis Armstrong",
+        "album":"single",
+        "category":"jazz",
+        "duration":"02:46",
+        "description":"no description",
+        "score":"4",
+        "faixa":"idk"
+    }
+    {
+        "id":19,
+        "title":"Young at Heart",
+        "cover":"../media/young.jpeg",
+        "author":"Fran Sinatra",
+        "band":"Frank Sinatra",
+        "album":"single",
+        "category":"jazz",
+        "duration":"02:52",
+        "description":"no description",
+        "score":"3",
+        "faixa":"idk"
+    }
+    {
+        "id":20,
+        "title":"Don't Cry Joe",
+        "cover":"../media/joe.jpeg",
+        "author":"Fran Sinatra",
+        "band":"Frank Sinatra",
+        "album":"single",
+        "category":"jazz",
+        "duration":"03:07",
+        "description":"no description",
+        "score":"3",
+        "faixa":"idk"
+    }
+    {
+        "id":21,
+        "title":"Black Hole Sun",
+        "cover":"../hole.jpeg",
+        "author":"Soundgarden",
+        "band":"Soundgarden",
+        "album":"single",
+        "category":"grunge",
+        "duration":"05:21",
+        "description":"no description",
+        "score":"4",
+        "faixa":"idk"
+    }
+    {
+        "id":22,
+        "title":"Comedown",
+        "cover":"../comedown.jpeg",
+        "author":"Bush",
+        "band":"Bush",
+        "album":"ggr"
     }
 ]
