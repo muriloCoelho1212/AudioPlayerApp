@@ -1,10 +1,12 @@
 *{
     box-sizing: border-box;
     padding: 0;
-    margin: 1%;
+    margin: 0;
 
     --gradient-a: rgb(69, 233, 104);
     --gradient-b: rgb(5, 99, 28);
+
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .istok-web-regular {
@@ -68,7 +70,17 @@ body{
     box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
 }
 
+.viewportPermanent{
+    position: fixed;
+    display: flex;
+    overflow: visible;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 #logo{
+    margin: 1%;
     width: 50%;
     height: 200px;
 }
@@ -76,4 +88,11 @@ body{
 #logo img{
     width: 100px;
     height: 100px;
+}
+
+#sidebar{
+    position: absolute;
+    height: 100%;
+    transform: translate(0, 20%);
+    
 }
