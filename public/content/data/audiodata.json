@@ -206,7 +206,7 @@
         "description":"no description",
         "score":"5",
         "faixa":"idk"
-    }
+    },
     {
         "id":16,
         "title":"Highway to Hell",
@@ -219,7 +219,7 @@
         "description":"no description",
         "score":"5",
         "faixa":"idk" 
-    }
+    },
     {
         "id":17,
         "title":"Another One Bites the Dust",
@@ -232,7 +232,7 @@
         "description":"no description",
         "score":"5",
         "faixa":"idk"
-    }
+    },
     {
         "id":18,
         "title":"Moon River",
@@ -245,7 +245,7 @@
         "description":"no description",
         "score":"4",
         "faixa":"idk"
-    }
+    },
     {
         "id":19,
         "title":"Young at Heart",
@@ -258,7 +258,7 @@
         "description":"no description",
         "score":"3",
         "faixa":"idk"
-    }
+    },
     {
         "id":20,
         "title":"Don't Cry Joe",
@@ -271,7 +271,7 @@
         "description":"no description",
         "score":"3",
         "faixa":"idk"
-    }
+    },
     {
         "id":21,
         "title":"Black Hole Sun",
@@ -284,13 +284,47 @@
         "description":"no description",
         "score":"4",
         "faixa":"idk"
-    }
+    },
     {
         "id":22,
         "title":"Comedown",
         "cover":"../comedown.jpeg",
         "author":"Bush",
         "band":"Bush",
-        "album":"ggr"
+        "album":"single",
+        "category":"grunge",
+        "duration":"04:39",
+        "description":"no description",
+        "score":"2",
+        "faixa":"idk"
+    },
+    {
+        "id":23,
+        "title":"Everythinhg Zen",
+        "cover":"../zen.jpeg",
+        "author":"Bush",
+        "band":"Bush",
+        "album":"single",
+        "category":"grunge",
+        "duration":"04:08",
+        "description":"no description",
+        "score":"3",
+        "faixa":"idk"
+    },
+    {
+        "id":24,
+        "title":"Lizzy",
+        "cover":"../lizzy.jpeg",
+        "author":"Melvins",
+        "band":"Melvins",
+        "album":"single",
+        "category":"grunge",
+        "duration":"04:43",
+        "description":"no description",
+        "score":"2",
+        "faixa":"idk"
+    },
+    {
+        
     }
 ]
