@@ -1,18 +1,5 @@
 [
     {
-        "id":0,
-        "title":"replaceme",
-        "cover":"imageurl",
-        "author":"namehere",
-        "band":"thesoftspoons",
-        "album":"albumname",
-        "category":"category",
-        "duration":"00:00",
-        "description":"descriptionhere",
-        "score":"0",
-        "faixa":"idk"
-    },
-    {
         "id":1,
         "title":"Bad girlfriend",
         "cover":"../media/TheoryOfADeadMan.jpeg",
