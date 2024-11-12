@@ -14,20 +14,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     div.style.flexDirection = 'column';
                     div.style.alignItems = 'center';
                     div.style.marginBottom = '20px';
+                    div.style.overflow = 'hidden';
+                    div.classList.add('songCard');
 
                     const songbtn = document.createElement('button');
                     const img = document.createElement('img');
                     songbtn.innerHTML = `${entry.title} || ${entry.duration}`;
+                    //songbtn.style.position = 'absolute';
+                    //songbtn.style.bottom = '10%';
+                    songbtn.style.height = '200px';
                     img.src = entry.cover;
                     img.style.maxWidth = '100%';
-                    img.style.height = 'auto';
-                    img.style.width = '200px';
+                    img.style.height = '100px';
+                    img.style.width = '100px';
                     img.style.maxHeight = '300px';
 
 
-                    songlist.appendChild(div);
-                    div.appendChild(songbtn);
                     div.appendChild(img);
+                    div.appendChild(songbtn);
+                    songlist.appendChild(div);
                 }
             })
         })
