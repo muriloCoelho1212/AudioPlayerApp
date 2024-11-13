@@ -1,0 +1,15 @@
+
+
+
+#songlist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 25px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    height: 100%;
+    width: 100%;
+}

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ctgBox = document.getElementById('categories');
+    const searchBtn = document.getElementById('search');
     console.log(`got ctg: ${ctgBox}`);
 
     fetch('content/data/audiodata.json')
@@ -26,4 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         })
         .catch(error => console.log(error))
+
+    searchBtn.addEventListener('click', function(){
+        searchBtn.href = `/search.html?query=${document.getElementById('queryInput').value}`;
+    });
+
 });
