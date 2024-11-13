@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ctg.style.borderRadius = '10%';
                 ctg.classList.add('category-button', 'btn', 'btn-dark', 'category-button');
                 ctg.onclick = () => {
-                    window.location.href = `/pages/songlist.html?category=${category.toLowerCase()}`;
+                    window.location.href = `/search.html?query=${category.toLowerCase()}`;
                 };
                 ctgBox.appendChild(ctg);
             });

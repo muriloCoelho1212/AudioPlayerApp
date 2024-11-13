@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+}
+
+.devlist{
+    position: absolute;
+    top: -25%;
+    left: -25%;
+}

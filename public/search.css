@@ -1,5 +1,198 @@
+*{
+    --gradient-a: rgb(69, 233, 104);
+    --gradient-b: rgb(5, 99, 28);
+
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.istok-web-regular {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.istok-web-bold {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.istok-web-regular-italic {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.istok-web-bold-italic {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.josefin-sans-regular {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h2{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h3, h4, h5, h6{
+    font-family: 'Istok Web', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: visible;
+}
+
+.contentBox{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
+}
+
+.viewportPermanent{
+    position: fixed;
+    display: flex;
+    overflow: visible;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+}
+
+#logo{
+    margin: 1%;
+    width: 50%;
+    height: 200px;
+}
+
+#logo img{
+    width: 100px;
+    height: 100px;
+}
+
+#sidebar{
+    position: absolute;
+    height: 100%;
+    top: -50%;
+    left: -72%;
+    transition: 0.3s;
+}
+
+#sidebar:hover{
+    cursor: pointer;
+    left:-50%;
+}
+
+body{
+
+    background: #d1d5db;
+}
+
+.height{
+    height: 100vh;
+}
 
 
+.form{
+    position: relative;
+    transform: translate(0,-48vh);
+}
+
+.form .fa-search{
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    color: #9ca3af;
+
+}
+
+.form span{
+
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan{
+    padding-left: 7px;
+}
+
+.left-pan i{
+   
+   padding-left: 10px;
+}
+
+.form-input{
+
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-input:focus{
+
+    box-shadow: none;
+    border:none;
+}
+
+.container-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+#categories{
+    gap: 10%;
+}
+
+.category-button {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 5px; 
+    margin-left: 5px;
+    width: 100px;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+}
+
+.category-button:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 100px;   
+}
+
+.dropdown-transition {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown.show .dropdown-transition {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 #songlist{
     display: flex;
@@ -12,4 +205,15 @@
 
     height: 100%;
     width: 100%;
+}
+
+.songCard{
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    background-color: white; 
+    padding: 10px; 
+    box-sizing: border-box;
 }
