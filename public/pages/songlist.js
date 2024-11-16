@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
 
+    const ctgBox = document.getElementById('categories');
+    window.fetchCategories(ctgBox);
+
     fetch('../content/data/audiodata.json')
         .then(response => response.json())
         .then(data => {
@@ -20,15 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     const songbtn = document.createElement('button');
                     const img = document.createElement('img');
                     songbtn.innerHTML = `${entry.title} || ${entry.duration}`;
-                    //songbtn.style.position = 'absolute';
-                    //songbtn.style.bottom = '10%';
                     songbtn.style.height = '200px';
                     img.src = entry.cover;
                     img.style.maxWidth = '100%';
                     img.style.height = '100px';
                     img.style.width = '100px';
                     img.style.maxHeight = '300px';
-
 
                     div.appendChild(img);
                     div.appendChild(songbtn);
@@ -37,5 +37,4 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
         .catch(error => console.log(error));
-
 });
