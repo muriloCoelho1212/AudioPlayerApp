@@ -95,6 +95,16 @@
         <div>
             <div id="songlist"></div>
         </div>
+
+        <div id="playbackMenu" class="playback-menu">
+          <audio id="audioPlayer" controls></audio>
+          <div id="playbackControls">
+            <button id="playPauseBtn">Pause</button>
+            <button id="skipBtn">Skip</button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0>00</span> / <span id="duration">0:00</span>
+          </div>
+        </div>
     
         </div>
             <script src="search.js"></script>

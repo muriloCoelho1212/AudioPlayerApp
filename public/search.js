@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const query = urlParams.get('query');
     const ctgBox = document.getElementById('categories');
 
+    //playback stuff
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playbackMenu = document.getElementById('playbackMenu');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const skipBtn = document.getElementById('skipBtn');
+    const progressBar = document.getElementById('progressBar');
+    const currentTime = document.getElementById('currentTime');
+    const duration = document.getElementById('duration');
+
     fetch('content/data/audiodata.json')
         .then(response => response.json())
         .then(data => {
@@ -39,7 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
                         div.appendChild(img);
                         div.appendChild(songbtn);
+                        songbtn.addEventListener('click', () => {
+                            audioPlayer.src = entry.faixa;
+                            audioPlayer.play();
+                            playbackMenu.style.display = 'block';
+                            duration.textContent = entry.duration;
+                        });
+                        console.log(`playing audio: ${audioPlayer.src}`);
                         songlist.appendChild(div);
+
                     }
                 })
             }
@@ -69,5 +86,37 @@ document.addEventListener('DOMContentLoaded', function () {
         searchBtn.addEventListener('click', function(){
             searchBtn.href = `/search.html?query=${document.getElementById('queryInput').value}`;
         });
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                audioPlayer.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+    
+        skipBtn.addEventListener('click', () => {
+            audioPlayer.currentTime += 10; // Skip 10 seconds
+        });
+    
+        audioPlayer.addEventListener('timeupdate', () => {
+            const current = audioPlayer.currentTime;
+            const total = audioPlayer.duration;
+            progressBar.value = (current / total) * 100;
+            currentTime.textContent = formatTime(current);
+        });
+    
+        progressBar.addEventListener('input', () => {
+            const total = audioPlayer.duration;
+            audioPlayer.currentTime = (progressBar.value / 100) * total;
+        });
+    
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
 
 });
