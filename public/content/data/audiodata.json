@@ -10,7 +10,8 @@
         "duration":"03:28",
         "description":"no description",
         "score":"4",
-        "faixa":"idk"
+        "faixa":"../media/audio/Bad_Girlfriend.mp3",
+        "url":"."
     },
     {
         "id":2,
@@ -23,7 +24,8 @@
         "duration":"07:19",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Just_the_Two_of_Us.mp3",
+        "url":"."
     },
     {
         "id":3,
@@ -36,11 +38,12 @@
         "duration":"04:41",
         "description":"no description",
         "score":"4.8",
-        "faixa":"idk"
+        "faixa":"../media/audio/Heart_Shaped_Box.mp3",
+        "url":"."
     },
     {
         "id":4,
-        "title":"automotivobibifogosa",
+        "title":"Automotivo Bibi Fogosa",
         "cover":"../media/miata.jpeg",
         "author":"bibifogosa",
         "band":"bibifogosa",
@@ -49,11 +52,12 @@
         "duration":"02:31",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Automotivo_Bibi_Fogosa.mp3",
+        "url":"."
     },
     {
         "id":5,
-        "title":"cocotafeiapacaralho",
+        "title":"Cocota Feia pra Caralho",
         "cover":"../media/cocota.jpeg",
         "author":"unknown",
         "band":"unknown",
@@ -62,11 +66,12 @@
         "duration":"02:59",
         "description":"no description",
         "score":"0",
-        "faixa":"idk"
+        "faixa":"../media/audio/Cocota_Feia_pra_Caralho.mp3",
+        "url":"."
     },
     {
         "id":6,
-        "title":"cigaro",
+        "title":"Cigaro",
         "cover":"../media/soad.jpeg",
         "author":"System of a Down",
         "band":"System of a Down",
@@ -75,7 +80,8 @@
         "duration":"02:11",
         "description":"no description",
         "score":"4.5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Cigaro.mp3",
+        "url":"."
     },
     {
         "id":7,
@@ -88,7 +94,8 @@
         "duration":"02:54",
         "description":"Made for the spongebob movie",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Goofy_Goober_Rock.mp3",
+        "url":"."
     },
     {
         "id":8,
@@ -101,7 +108,8 @@
         "duration":"02:21",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Fortunate_Son.mp3",
+        "url":"."
     },
     {
         "id":9,
@@ -114,7 +122,8 @@
         "duration":"03:49",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/O_Sol_e_a_Lua.mp3",
+        "url":"."
     },
     {
         "id":10,
@@ -127,7 +136,8 @@
         "duration":"03:57",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Poker_Face.mp3",
+        "url":"."
     },
     {
         "id":11,
@@ -140,7 +150,8 @@
         "duration":"04:09",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Judas.mp3",
+        "url":"."
     },
     {
         "id":12,
@@ -153,7 +164,8 @@
         "duration":"02:08",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/flor.mp3",
+        "url":"."
     },
     {
         "id":13,
@@ -166,7 +178,8 @@
         "duration":"02:39",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Arrasta_Pra_Cima.mp3",
+        "url":"."
     },
     {
         "id":14,
@@ -179,7 +192,8 @@
         "duration":"02:29",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/KYABA_HO.mp3",
+        "url":"."
     },
     {
         "id":15,
@@ -192,7 +206,8 @@
         "duration":"02:51",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Savage_Love.mp3",
+        "url":"."
     },
     {
         "id":16,
@@ -205,7 +220,8 @@
         "duration":"03:28",
         "description":"no description",
         "score":"5",
-        "faixa":"idk" 
+        "faixa":"../media/audio/Highway_to_Hell.mp3",
+        "url":"." 
     },
     {
         "id":17,
@@ -218,7 +234,8 @@
         "duration":"03:43",
         "description":"no description",
         "score":"5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Another_One_Bites_the_Dust.mp3",
+        "url":"."
     },
     {
         "id":18,
@@ -231,7 +248,8 @@
         "duration":"02:46",
         "description":"no description",
         "score":"4",
-        "faixa":"idk"
+        "faixa":"../media/audio/Moon_River.mp3",
+        "url":"."
     },
     {
         "id":19,
@@ -244,7 +262,8 @@
         "duration":"02:52",
         "description":"no description",
         "score":"3",
-        "faixa":"idk"
+        "faixa":"../media/audio/Young_at_Heart.mp3",
+        "url":"."
     },
     {
         "id":20,
@@ -257,7 +276,8 @@
         "duration":"03:07",
         "description":"no description",
         "score":"3",
-        "faixa":"idk"
+        "faixa":"../media/audio/Don't_Cry_Joe.mp3",
+        "url":"."
     },
     {
         "id":21,
@@ -270,7 +290,8 @@
         "duration":"05:21",
         "description":"no description",
         "score":"4",
-        "faixa":"idk"
+        "faixa":"../media/audio/Black_Hole_Sun.mp3",
+        "url":"."
     },
     {
         "id":22,
@@ -283,7 +304,8 @@
         "duration":"04:39",
         "description":"no description",
         "score":"2",
-        "faixa":"idk"
+        "faixa":"../media/audio/Comedown.mp3",
+        "url":"."
     },
     {
         "id":23,
@@ -296,7 +318,8 @@
         "duration":"04:08",
         "description":"no description",
         "score":"3",
-        "faixa":"idk"
+        "faixa":"../media/audio/Everything_Zen.mp3",
+        "url":"."
     },
     {
         "id":24,
@@ -309,7 +332,8 @@
         "duration":"04:43",
         "description":"no description",
         "score":"2",
-        "faixa":"idk"
+        "faixa":"../media/audio/Lizzy.mp3",
+        "url":"."
     },
     {
         "id":25,
@@ -322,7 +346,8 @@
         "duration":"01:32",
         "description":"no description",
         "score":"3.5",
-        "faixa":"idk"
+        "faixa":"../media/audio/Ta_OK.mp3",
+        "url":"."
     },
     {
         "id":26,
@@ -335,7 +360,8 @@
         "duration":"02:02",
         "description":"no description",
         "score":"2",
-        "faixa":"idk"
+        "faixa":"../media/audio/Toma_Tapa.mp3",
+        "url":"."
     },
     {
     "id":27,
@@ -348,7 +374,8 @@
     "duration":"04:52",
     "description":"A classic metal song",
     "score":"4.8",
-    "faixa":"idk"
+    "faixa":"../media/audio/Thunderstruck.mp3",
+    "url":"."
     },
     {
     "id":28,
@@ -361,7 +388,8 @@
     "duration":"08:35",
     "description":"A legendary metal track",
     "score":"5",
-    "faixa":"idk"
+    "faixa":"../media/audio/Master_of_Puppets.mp3",
+    "url":"."
     },
     {
     "id":29,
@@ -374,7 +402,8 @@
     "duration":"06:06",
     "description":"A high-energy metal song",
     "score":"4.7",
-    "faixa":"idk"
+    "faixa":"../media/audio/Painkiller.mp3",
+    "url":"."
     },
     {
     "id":30,
@@ -387,7 +416,8 @@
     "duration":"05:51",
     "description":"An iconic metal anthem",
     "score":"4.9",
-    "faixa":"idk"
+    "faixa":"../media/audio/Holy_Diver.mp3",
+    "url":"."
     },
     {
     "id":31,
@@ -400,7 +430,8 @@
     "duration":"04:15",
     "description":"A popular pagode song",
     "score":"4.5",
-    "faixa":"idk"
+    "faixa":"../media/audio/Deixa_Acontecer.mp3",
+    "url":"."
     },
     {
     "id":32,
@@ -413,7 +444,8 @@
     "duration":"03:50",
     "description":"A heartfelt pagode track",
     "score":"4.6",
-    "faixa":"idk"
+    "faixa":"../media/audio/Coracao_Radiante.mp3",
+    "url":"."
     },
     {
     "id":33,
@@ -426,7 +458,8 @@
     "duration":"04:20",
     "description":"A romantic pagode song",
     "score":"4.7",
-    "faixa":"idk"
+    "faixa":"../media/audio/Ta_Vendo_Aquela_Lua.mp3",
+    "url":"."
     },
     {
     "id":34,
@@ -439,7 +472,8 @@
     "duration":"03:45",
     "description":"A classic pagode hit",
     "score":"4.8",
-    "faixa":"idk"
+    "faixa":"../media/audio/Livre_Pra_Voar.mp3",
+    "url":"."
     },
     {
     "id":35,
@@ -452,6 +486,7 @@
     "duration":"02:30",
     "description":"A popular funk song",
     "score":"4.3",
-    "faixa":"idk"
+    "faixa":"../media/audio/Parado_no_Bailao.mp3",
+    "url":"."
     }
 ]
