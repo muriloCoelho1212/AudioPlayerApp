@@ -22,54 +22,53 @@
 </head>
 
 <body>
-  <div class="d-flex">
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white" style="width: 280px;">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <span class="fs-4">Sidebar</span>
+
+  <div class="viewportPermanent">
+    <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-dark" style="width: 280px; color: white">
+      <a href="https://getbootstrap.com/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#99091f" class="bi bi-spotify"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" />
+        </svg>
+        <span class="fs-4">Better Than Spotify</span>
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link active text-white" aria-current="page">
-            Home
-          </a>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link" aria-current="page">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="search.html" class="nav-link">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#search"></use></svg>
+                Search
+              </a>
         </li>
-        <li>
-          <a href="search.html?query=" class="nav-link text-white">
-            Search
-          </a>
-        </li>
-        <li>
-          <a href="devs.html" class="nav-link text-white">
-            Devs
-          </a>
-        </li>
+          <li class="nav-item">
+            <a href="devs.html" class="nav-link active">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#devs"></use></svg>
+              Devs
+            </a>
+          </li>
       </ul>
       <hr>
-      <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong>User</strong>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Sign out</a></li>
-        </ul>
-      </div>
+
     </div>
-    <div class="flex-grow-1">
-      <div class="d-flex flex-column flex-grow-1 p-3 devlist">
-        <h1>Developers</h1>
-        <ul class="list-unstyled">
-          <li>Breno Rosa Orem - 248079</li>
-          <li>Fabiano Dantas de Souza - 248153</li>
-          <li>Lucas Gonçalves Panisset Lima - 211703</li>
-          <li>Luis Fillipe de Medeiros Silva - 248370</li>
-          <li>Murilo Coelho dos Santos - 248735</li>
-          <li>Murilo Coelho dos Santos - 248735</li>
-        </ul>
-      </div>
+
+    <div class="d-flex flex-column flex-grow-1 p-3 devlist">
+      <h1>Developers</h1>
+      <ul class="list-unstyled">
+        <li>Breno Rosa Orem - 248079</li>
+        <li>Fabiano Dantas de Souza - 248153</li>
+        <li>Lucas Gonçalves Panisset Lima - 211703</li>
+        <li>Luis Fillipe de Medeiros Silva - 248370</li>
+        <li>Murilo Coelho dos Santos - 248735</li>
+        <li>Murilo Coelho dos Santos - 248735</li>
+      </ul>
     </div>
   </div>
 
