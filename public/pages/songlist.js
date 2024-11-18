@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const category = urlParams.get('category');
 
     const ctgBox = document.getElementById('categories');
-    window.fetchCategories(ctgBox);
+    window.fetchCategories(ctgBox); //nao
 
     fetch('../content/data/audiodata.json')
         .then(response => response.json())
