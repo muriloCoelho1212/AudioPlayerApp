@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             else{
                 data.map(entry => {
-                    //console.log(`checking ${entry.title} for ${query}... ${entry.title.includes(query)}`);
                     if (entry.title.toUpperCase().includes(query.toUpperCase()) || query.toUpperCase() == entry.category.toUpperCase()) {
                         const div = document.createElement('div');
                         div.style.display = 'flex';
@@ -36,15 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         const songbtn = document.createElement('button');
                         const img = document.createElement('img');
                         songbtn.innerHTML = `${entry.title} || ${entry.duration}`;
-                        //songbtn.style.position = 'absolute';
-                        //songbtn.style.bottom = '10%';
                         songbtn.style.height = '200px';
+                        songbtn.style.zIndex = '1050';
                         img.src = entry.cover;
                         img.style.maxWidth = '100%';
                         img.style.height = '100px';
                         img.style.width = '100px';
                         img.style.maxHeight = '300px';
-    
     
                         div.appendChild(img);
                         div.appendChild(songbtn);
@@ -54,13 +51,29 @@ document.addEventListener('DOMContentLoaded', function () {
                             playbackMenu.style.display = 'block';
                             duration.textContent = entry.duration;
                         });
-                        console.log(`playing audio: ${audioPlayer.src}`);
                         songlist.appendChild(div);
 
+                        // Add mousemove event listener for tilt effect
+                        div.addEventListener('mousemove', (e) => {
+                            const rect = div.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const centerX = rect.width / 2;
+                            const centerY = rect.height / 2;
+                            const deltaX = x - centerX;
+                            const deltaY = y - centerY;
+                            const rotateX = (deltaY / centerY) * 10; // Adjust the tilt intensity
+                            const rotateY = (deltaX / centerX) * -10; // Adjust the tilt intensity
+                            div.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                        });
+
+                        // Reset the tilt effect when the mouse leaves the card
+                        div.addEventListener('mouseleave', () => {
+                            div.style.transform = 'rotateX(0) rotateY(0)';
+                        });
                     }
                 })
             }
-            
 
             const categories = []
             data.map((entry) => {

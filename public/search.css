@@ -75,7 +75,7 @@ body{
     height: 100%;
     top: 50%;
     left: 50%;
-    z-index: 1000;
+    z-index: 1150;
 }
 
 #logo{
@@ -91,6 +91,7 @@ body{
 
 #sidebar{
     position: absolute;
+    z-index: 1150;
     height: 100%;
     top: -50%;
     left: -72%;
@@ -103,7 +104,6 @@ body{
 }
 
 body{
-
     background: #d1d5db;
 }
 
@@ -111,29 +111,24 @@ body{
     height: 100vh;
 }
 
-
 .form{
     position: relative;
     transform: translate(0,-48vh);
 }
 
 .form .fa-search{
-
     position: absolute;
     top:20px;
     left: 20px;
     color: #9ca3af;
-
 }
 
 .form span{
-
     position: absolute;
     right: 17px;
     top: 13px;
     padding: 2px;
     border-left: 1px solid #d1d5db;
-
 }
 
 .left-pan{
@@ -141,19 +136,16 @@ body{
 }
 
 .left-pan i{
-   
    padding-left: 10px;
 }
 
 .form-input{
-
     height: 55px;
     text-indent: 33px;
     border-radius: 10px;
 }
 
 .form-input:focus{
-
     box-shadow: none;
     border:none;
 }
@@ -191,6 +183,10 @@ body{
     width: 100px;  
 }
 
+.dropdown{
+    z-index: 1200;
+}
+
 .dropdown-transition {
     opacity: 0;
     transform: translateY(-10px);
@@ -210,7 +206,6 @@ body{
     gap: 25px;
     overflow-y: hidden;
     overflow-x: scroll;
-
     height: 100%;
     width: 100%;
 }
@@ -224,12 +219,19 @@ body{
     background-color: white; 
     padding: 10px; 
     box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+}
+
+.songCard:hover{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .playback-menu {
     position: fixed;
+    z-index: 1100;
     bottom: 0;
-    width: 100%; /* Ensure the playback menu takes the full width */
+    width: 100vw; /* Ensure the playback menu takes the full width of the viewport */
     background-color: #333;
     color: white;
     display: flex;
@@ -244,19 +246,90 @@ body{
 #playbackControls {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
+}
+
+#playPauseBtn, #skipBtn {
+    background-color: #007bff; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#playPauseBtn:hover, #skipBtn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#playPauseBtn:active, #skipBtn:active {
+    background-color: #004085; /* Even darker shade for active state */
+    transform: scale(1); /* Reset scale on active */
 }
 
 #progressBar {
     width: 300px;
+    height: 5px;
+    background-color: #555;
+    border-radius: 5px;
+    outline: none;
 }
 
-#audioPlayer{
+#progressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#progressBar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#audioPlayer {
     visibility: hidden;
 }
 
-button{
+button {
     outline: none;
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 736px(max-width: 950px){
+    .contentBox{
+        width: 100%;
+    }
+
+    #sidebar{
+        left: -100%;
+    }
+
+    .form{
+        transform: translate(0,-40vh);
+    }
+
+    .form-input{
+        width: 100%;
+    }
+
+    #categories{
+        max-width: 100%;
+    }
+
+    #songlist{
+        flex-direction: column;
+    }
+
+    .songCard{
+        width: 100%;
+    }
 }
