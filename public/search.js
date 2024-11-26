@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     const songlist = document.getElementById('songlist');
-    songlist.innerHTML = '';
-    const urlParams = new URLSearchParams(window.location.search);
     const searchBtn = document.getElementById('search');
+    const queryInput = document.getElementById('queryInput');
+    const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('query');
     const ctgBox = document.getElementById('categories');
     const cover = document.getElementById('cover');
 
-    //playback stuff
+    // playback stuff
     const audioPlayer = document.getElementById('audioPlayer');
     const playbackMenu = document.getElementById('playbackMenu');
     const playPauseBtn = document.getElementById('playPauseBtn');
@@ -16,15 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentTime = document.getElementById('currentTime');
     const duration = document.getElementById('duration');
 
+    // Restaurar último termo pesquisado na barra de pesquisa
+    const lastSearch = localStorage.getItem('lastSearch');
+    if (lastSearch) {
+        queryInput.value = lastSearch;
+    }
+
     fetch('content/data/audiodata.json')
         .then(response => response.json())
         .then(data => {
-            if(data.length <= 0){
+            if (data.length <= 0) {
                 songlist.innerHTML = '<h2>No songs found.</h2>';
-            }
-            else{
+            } else {
                 data.map(entry => {
-                    // Filter songs based on the search query or category
                     if (!query || entry.title.toUpperCase().includes(query.toUpperCase()) || query.toUpperCase() == entry.category.toUpperCase()) {
                         const div = document.createElement('div');
                         div.style.display = 'flex';
@@ -62,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                         songlist.appendChild(div);
 
-                        // Add mousemove event listener for tilt effect
                         div.addEventListener('mousemove', (e) => {
                             const rect = div.getBoundingClientRect();
                             const x = e.clientX - rect.left;
@@ -71,25 +74,24 @@ document.addEventListener('DOMContentLoaded', function () {
                             const centerY = rect.height / 2;
                             const deltaX = x - centerX;
                             const deltaY = y - centerY;
-                            const rotateX = (deltaY / centerY) * 30; // Adjust the tilt intensity
-                            const rotateY = (deltaX / centerX) * -30; // Adjust the tilt intensity
+                            const rotateX = (deltaY / centerY) * 30;
+                            const rotateY = (deltaX / centerX) * -30;
                             div.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                         });
 
-                        // Reset the tilt effect when the mouse leaves the card
                         div.addEventListener('mouseleave', () => {
                             div.style.transform = 'rotateX(0) rotateY(0)';
                         });
                     }
-                })
+                });
             }
 
-            const categories = []
+            const categories = [];
             data.map((entry) => {
                 if (!categories.includes(entry.category)) {
                     categories.push(entry.category);
                 }
-            })
+            });
 
             categories.forEach(category => {
                 const ctg = document.createElement('li');
@@ -100,53 +102,54 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.log(error));
 
-        searchBtn.addEventListener('click', function(){
-            searchBtn.href = `/search.html?query=${document.getElementById('queryInput').value}`;
-        });
+    searchBtn.addEventListener('click', function () {
+        const searchQuery = queryInput.value;
+        localStorage.setItem('lastSearch', searchQuery); // Salvar último termo pesquisado
+        searchBtn.href = `/search.html?query=${searchQuery}`;
+    });
 
-        playPauseBtn.addEventListener('click', () => {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playPauseBtn.textContent = 'Pause';
-            } else {
-                audioPlayer.pause();
-                playPauseBtn.textContent = 'Play';
-            }
-        });
-    
-        skipBtn.addEventListener('click', () => {
-            audioPlayer.currentTime += 10; // Skip 10 seconds
-        });
-    
-        audioPlayer.addEventListener('timeupdate', () => {
-            const current = audioPlayer.currentTime;
-            const total = audioPlayer.duration;
-            progressBar.value = (current / total) * 100;
-            currentTime.textContent = formatTime(current);
-            localStorage.setItem('songStamp', audioPlayer.currentTime);
-        });
-    
-        progressBar.addEventListener('input', () => {
-            const total = audioPlayer.duration;
-            audioPlayer.currentTime = (progressBar.value / 100) * total;
-        });
-    
-        function formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.textContent = 'Pause';
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.textContent = 'Play';
         }
+    });
+
+    skipBtn.addEventListener('click', () => {
+        audioPlayer.currentTime += 10; // Skip 10 seconds
+    });
+
+    audioPlayer.addEventListener('timeupdate', () => {
+        const current = audioPlayer.currentTime;
+        const total = audioPlayer.duration;
+        progressBar.value = (current / total) * 100;
+        currentTime.textContent = formatTime(current);
+        localStorage.setItem('songStamp', audioPlayer.currentTime);
+    });
+
+    progressBar.addEventListener('input', () => {
+        const total = audioPlayer.duration;
+        audioPlayer.currentTime = (progressBar.value / 100) * total;
+    });
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    }
 
     const songSrc = localStorage.getItem('currentSong');
     const songTimestamp = localStorage.getItem('songStamp');
 
-    if(songSrc){
+    if (songSrc) {
         audioPlayer.src = songSrc;
-        if(songTimestamp) audioPlayer.currentTime = songTimestamp;
+        if (songTimestamp) audioPlayer.currentTime = songTimestamp;
         audioPlayer.play();
         playbackMenu.style.display = 'block';
         duration.textContent = localStorage.getItem('songDuration');
         cover.src = localStorage.getItem('songCover');
     }
-
 });
