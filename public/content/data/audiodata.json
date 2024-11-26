@@ -177,6 +177,7 @@
         "category":"Pagode",
         "duration":"02:39",
         "description":"no description",
+        "url":"."
         "score":"5",
         "faixa":"media/audio/Arrasta_Pra_Cima.mp3",
         "url":"."
@@ -262,7 +263,7 @@
         "duration":"02:52",
         "description":"no description",
         "score":"3",
-        "faixa":"media/audio/Young_At_Heart.mp3",
+        "faixa":"media/audio/youngat.mpeg",
         "url":"."
     },
     {

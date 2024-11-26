@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             audioPlayer.play();
                             playbackMenu.style.display = 'block';
                             duration.textContent = entry.duration;
+                            localStorage.setItem('songDuration', entry.duration);
+                            localStorage.setItem('currentSong', audioPlayer.src);
                         });
                         songlist.appendChild(div);
 
@@ -87,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ctg.style.width = '100px';
                 ctg.style.borderRadius = '10%';
                 ctg.classList.add('category-button', 'btn', 'btn-dark', 'category-button');
-                ctg.onclick = () => {
+                ctg.onclick = () => {   
                     window.location.href = `/search.html?query=${category.toLowerCase()}`;
                 };
                 ctgBox.appendChild(ctg);
@@ -118,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const total = audioPlayer.duration;
             progressBar.value = (current / total) * 100;
             currentTime.textContent = formatTime(current);
+            localStorage.setItem('songStamp', audioPlayer.currentTime);
         });
     
         progressBar.addEventListener('input', () => {
@@ -130,5 +133,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const secs = Math.floor(seconds % 60);
             return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
         }
+
+    const songSrc = localStorage.getItem('currentSong');
+    const songTimestamp = localStorage.getItem('songStamp');
+
+    if(songSrc){
+        audioPlayer.src = songSrc;
+        if(songTimestamp) audioPlayer.currentTime = songTimestamp;
+        audioPlayer.play();
+        playbackMenu.style.display = 'block';
+        duration.textContent = localStorage.getItem('songDuration');
+    }
 
 });
