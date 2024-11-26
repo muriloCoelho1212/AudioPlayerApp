@@ -43,14 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
             })
 
             categories.forEach(category => {
-                const ctg = document.createElement('button');
-                ctg.innerHTML = `<h5>${category.toLowerCase()}</h5>`;
-                ctg.style.width = '100px';
-                ctg.style.borderRadius = '10%';
-                ctg.classList.add('category-button', 'btn', 'btn-dark', 'category-button');
-                ctg.onclick = () => {
-                    window.location.href = `/search.html?query=${category.toLowerCase()}`;
-                };
+                const ctg = document.createElement('li');
+                ctg.innerHTML = `<a class="dropdown-item" href="/search.html?query=${category.toLowerCase()}"><h5>${category.toLowerCase()}</h5></a>`;
+                ctg.style.width = '50%';
                 ctgBox.appendChild(ctg);
             });
 

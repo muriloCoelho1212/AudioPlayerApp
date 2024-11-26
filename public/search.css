@@ -159,6 +159,13 @@ body{
     margin-top: 20px; 
 }
 
+.containter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #categories{
     display: none;
     flex-wrap: wrap;
@@ -331,7 +338,9 @@ button {
     }
 
     #categories{
+        display: flex;
         max-width: 100%;
+        gap:50px;
     }
 
     #songlist{
@@ -341,4 +350,9 @@ button {
     .songCard{
         width: 100%;
     }
+
+    #pageTitle{
+        text-align: center;
+    }
+
 }

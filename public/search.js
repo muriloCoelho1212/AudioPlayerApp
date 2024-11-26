@@ -93,7 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             categories.forEach(category => {
                 const ctg = document.createElement('li');
-                ctg.innerHTML = `<a class="dropdown-item" href="/search.html?query=${category.toLowerCase()}">${category.toLowerCase()}</a>`;
+                ctg.innerHTML = `<a class="dropdown-item" href="/search.html?query=${category.toLowerCase()}"><h5>${category.toLowerCase()}</h5></a>`;
+                ctg.style.width = '50%';
                 ctgBox.appendChild(ctg);
             });
         })
