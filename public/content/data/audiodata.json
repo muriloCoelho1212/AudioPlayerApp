@@ -253,16 +253,16 @@
     },
     {
         "id":19,
-        "title":"Young at Heart",
-        "cover":"../media/young.jpeg",
-        "author":"Fran Sinatra",
-        "band":"Frank Sinatra",
+        "title":"That Old Feeling",
+        "cover":"../media/old.jpeg",
+        "author":"Chet Baker",
+        "band":"Chet Baker",
         "album":"single",
         "category":"Jazz",
-        "duration":"02:52",
+        "duration":"03  :17",
         "description":"no description",
         "score":"3",
-        "faixa":"media/audio/youngfds.mp3",
+        "faixa":"media/audio/old.mp3",
         "url":"."
     },
     {
