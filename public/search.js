@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBtn = document.getElementById('search');
     const query = urlParams.get('query');
     const ctgBox = document.getElementById('categories');
+    const cover = document.getElementById('cover');
 
     //playback stuff
     const audioPlayer = document.getElementById('audioPlayer');
@@ -23,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             else{
                 data.map(entry => {
-                    //console.log(`checking ${entry.title} for ${query}... ${entry.title.includes(query)}`);
-                    if (entry.title.toUpperCase().includes(query.toUpperCase()) || query.toUpperCase() == entry.category.toUpperCase()) {
+                    // Filter songs based on the search query or category
+                    if (!query || entry.title.toUpperCase().includes(query.toUpperCase()) || query.toUpperCase() == entry.category.toUpperCase()) {
                         const div = document.createElement('div');
                         div.style.display = 'flex';
                         div.style.flexDirection = 'column';
@@ -32,35 +33,56 @@ document.addEventListener('DOMContentLoaded', function () {
                         div.style.marginBottom = '20px';
                         div.style.overflow = 'hidden';
                         div.classList.add('songCard');
-    
-                        const songbtn = document.createElement('button');
+
+                        const songText = document.createElement('h5');
                         const img = document.createElement('img');
-                        songbtn.innerHTML = `${entry.title} || ${entry.duration}`;
-                        //songbtn.style.position = 'absolute';
-                        //songbtn.style.bottom = '10%';
-                        songbtn.style.height = '200px';
+                        songText.innerHTML = `${entry.title} <br> ${entry.duration}`;
+                        songText.style.textAlign = 'center';
                         img.src = entry.cover;
                         img.style.maxWidth = '100%';
                         img.style.height = '100px';
                         img.style.width = '100px';
                         img.style.maxHeight = '300px';
-    
-    
+
                         div.appendChild(img);
-                        div.appendChild(songbtn);
-                        songbtn.addEventListener('click', () => {
+                        div.appendChild(songText);
+                        div.addEventListener('click', () => {
                             audioPlayer.src = entry.faixa;
                             audioPlayer.play();
                             playbackMenu.style.display = 'block';
                             duration.textContent = entry.duration;
+                            localStorage.setItem('songDuration', entry.duration);
+                            localStorage.setItem('currentSong', audioPlayer.src);
+                            localStorage.setItem('songCover', entry.cover);
+                            localStorage.setItem('songTitle', entry.title);
+                            localStorage.setItem('songDescription', entry.description);
+                            localStorage.setItem('songAuthor', entry.author);
+
+                            cover.src = entry.cover;
                         });
-                        console.log(`playing audio: ${audioPlayer.src}`);
                         songlist.appendChild(div);
 
+                        // Add mousemove event listener for tilt effect
+                        div.addEventListener('mousemove', (e) => {
+                            const rect = div.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const centerX = rect.width / 2;
+                            const centerY = rect.height / 2;
+                            const deltaX = x - centerX;
+                            const deltaY = y - centerY;
+                            const rotateX = (deltaY / centerY) * 30; // Adjust the tilt intensity
+                            const rotateY = (deltaX / centerX) * -30; // Adjust the tilt intensity
+                            div.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                        });
+
+                        // Reset the tilt effect when the mouse leaves the card
+                        div.addEventListener('mouseleave', () => {
+                            div.style.transform = 'rotateX(0) rotateY(0)';
+                        });
                     }
                 })
             }
-            
 
             const categories = []
             data.map((entry) => {
@@ -70,14 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
             })
 
             categories.forEach(category => {
-                const ctg = document.createElement('button');
-                ctg.innerHTML = `<h5>${category.toLowerCase()}</h5>`;
-                ctg.style.width = '100px';
-                ctg.style.borderRadius = '10%';
-                ctg.classList.add('category-button', 'btn', 'btn-dark', 'category-button');
-                ctg.onclick = () => {
-                    window.location.href = `/search.html?query=${category.toLowerCase()}`;
-                };
+                const ctg = document.createElement('li');
+                ctg.innerHTML = `<a class="dropdown-item" href="/search.html?query=${category.toLowerCase()}"><h5>${category.toLowerCase()}</h5></a>`;
+                ctg.style.width = '50%';
                 ctgBox.appendChild(ctg);
             });
         })
@@ -106,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const total = audioPlayer.duration;
             progressBar.value = (current / total) * 100;
             currentTime.textContent = formatTime(current);
+            localStorage.setItem('songStamp', audioPlayer.currentTime);
         });
     
         progressBar.addEventListener('input', () => {
@@ -118,5 +136,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const secs = Math.floor(seconds % 60);
             return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
         }
+
+    const songSrc = localStorage.getItem('currentSong');
+    const songTimestamp = localStorage.getItem('songStamp');
+
+    if(songSrc){
+        audioPlayer.src = songSrc;
+        if(songTimestamp) audioPlayer.currentTime = songTimestamp;
+        audioPlayer.play();
+        playbackMenu.style.display = 'block';
+        duration.textContent = localStorage.getItem('songDuration');
+        cover.src = localStorage.getItem('songCover');
+    }
 
 });

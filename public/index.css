@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -93,16 +94,18 @@ body{
 }
 
 #sidebar{
-    position: absolute;
+    position: fixed;
+    z-index: 1150;
     height: 100%;
-    top: -50%;
-    left: -72%;
+    top: 0;
+    left: -340px;
+    width: 250px;
     transition: 0.3s;
 }
 
 #sidebar:hover{
     cursor: pointer;
-    left:-50%;
+    left:0%;
 }
 
 body{
@@ -161,14 +164,6 @@ body{
     border:none;
 }
 
-.container-page {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px; 
-}
-
 #categories{
     gap: 10%;
 }
@@ -196,4 +191,89 @@ body{
 .dropdown.show .dropdown-transition {
     opacity: 1;
     transform: translateY(0);
+}
+
+.playback-menu {
+    position: absolute;
+    z-index: 1100;
+    bottom: 0;
+    width: 50vw; /* Ensure the playback menu takes the full width of the viewport */
+    background-color: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    bottom: 15%;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+#playbackControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#playPauseBtn, #skipBtn {
+    background-color: #007bff; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#playPauseBtn:hover, #skipBtn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#playPauseBtn:active, #skipBtn:active {
+    background-color: #004085; /* Even darker shade for active state */
+    transform: scale(1); /* Reset scale on active */
+}
+
+#progressBar {
+    width: 300px;
+    height: 5px;
+    background-color: #555;
+    border-radius: 5px;
+    outline: none;
+}
+
+#progressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#progressBar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#audioPlayer {
+    visibility: hidden;
+}
+
+button {
+    outline: none;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cover{
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
 }

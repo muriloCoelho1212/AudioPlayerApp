@@ -46,9 +46,7 @@
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorias
               </button>
-              <ul class="dropdown-menu dropdown" id="categories">   
-                <!-- <div id="categories" class="dropdown-item"></div> -->
-              </ul>
+              <ul class="dropdown-menu dropdown" id="categories"></ul>
             </div>
         
         </div>
@@ -90,21 +88,22 @@
             </div>
         </div>
 
-        <div class="container">
-        <h1>Lista de músicas</h1>
-        <div>
-            <div id="songlist"></div>
-        </div>
-
         <div id="playbackMenu" class="playback-menu">
           <audio id="audioPlayer" controls></audio>
           <div id="playbackControls">
+            <img id="cover">
             <button id="playPauseBtn">Pause</button>
             <button id="skipBtn">Skip</button>
             <input type="range" id="progressBar" value="0" max="100">
             <span id="currentTime">0>00</span> / <span id="duration">0:00</span>
           </div>
         </div>
+        <div class="container">
+        <h1 id="pageTitle">Lista de músicas</h1>
+        <div>
+            <div id="songlist"></div>
+        </div>
+
     
         </div>
             <script src="search.js"></script>
