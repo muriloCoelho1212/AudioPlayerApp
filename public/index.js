@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const ctgBox = document.getElementById('categories');
     const searchBtn = document.getElementById('search');
     const cover = document.getElementById('cover');
+    const title = document.getElementById('title');
+    const description = document.getElementById('description');
     console.log(`got ctg: ${ctgBox}`);
 
     const audioPlayer = document.getElementById('audioPlayer');
@@ -23,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
         audioPlayer.play();
         playbackMenu.style.display = 'block';
         duration.textContent = localStorage.getItem('songDuration');
+
+        title.textContent = `${localStorage.getItem('songTitle')} - ${localStorage.getItem('songAuthor')}`;
+        description.textContent = localStorage.getItem('songDescription');
     }
 
     fetch('content/data/audiodata.json')

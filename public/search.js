@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBtn = document.getElementById('search');
     const query = urlParams.get('query');
     const ctgBox = document.getElementById('categories');
+    const cover = document.getElementById('cover');
 
     //playback stuff
     const audioPlayer = document.getElementById('audioPlayer');
@@ -52,6 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             localStorage.setItem('songDuration', entry.duration);
                             localStorage.setItem('currentSong', audioPlayer.src);
                             localStorage.setItem('songCover', entry.cover);
+                            localStorage.setItem('songTitle', entry.title);
+                            localStorage.setItem('songDescription', entry.description);
+                            localStorage.setItem('songAuthor', entry.author);
+
+                            cover.src = entry.cover;
                         });
                         songlist.appendChild(div);
 
@@ -144,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
         audioPlayer.play();
         playbackMenu.style.display = 'block';
         duration.textContent = localStorage.getItem('songDuration');
+        cover.src = localStorage.getItem('songCover');
     }
 
 });
