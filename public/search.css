@@ -313,7 +313,7 @@ button {
     height: 100px;
 }
 
-@media screen and (min-width: 736px(max-width: 950px){
+@media screen and (min-width: 736px) and (max-width: 950px){
     .contentBox{
         width: 100%;
     }

@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if(songTimestamp) audioPlayer.currentTime = songTimestamp;
         if(songCover) cover.src = songCover;
         audioPlayer.play();
-        playbackMenu.style.display = 'block';
+        playbackMenu.style.display = 'flex';
+        playbackMenu.style.justifyContent = 'center';
+        playbackMenu.style.alignItems = 'center';
         duration.textContent = localStorage.getItem('songDuration');
 
         title.textContent = `${localStorage.getItem('songTitle')} - ${localStorage.getItem('songAuthor')}`;

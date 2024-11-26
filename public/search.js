@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             else{
                 data.map(entry => {
-                    if (entry.title.toUpperCase().includes(query.toUpperCase()) || query.toUpperCase() == entry.category.toUpperCase()) {
+                    // Filter songs based on the search query or category
+                    if (!query || entry.title.toUpperCase().includes(query.toUpperCase()) || query.toUpperCase() == entry.category.toUpperCase()) {
                         const div = document.createElement('div');
                         div.style.display = 'flex';
                         div.style.flexDirection = 'column';
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         div.style.marginBottom = '20px';
                         div.style.overflow = 'hidden';
                         div.classList.add('songCard');
-    
+
                         const songText = document.createElement('h5');
                         const img = document.createElement('img');
                         songText.innerHTML = `${entry.title} <br> ${entry.duration}`;
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         img.style.height = '100px';
                         img.style.width = '100px';
                         img.style.maxHeight = '300px';
-    
+
                         div.appendChild(img);
                         div.appendChild(songText);
                         div.addEventListener('click', () => {
@@ -91,14 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
             })
 
             categories.forEach(category => {
-                const ctg = document.createElement('button');
-                ctg.innerHTML = `<h5>${category.toLowerCase()}</h5>`;
-                ctg.style.width = '100px';
-                ctg.style.borderRadius = '10%';
-                ctg.classList.add('category-button', 'btn', 'btn-dark', 'category-button');
-                ctg.onclick = () => {   
-                    window.location.href = `/search.html?query=${category.toLowerCase()}`;
-                };
+                const ctg = document.createElement('li');
+                ctg.innerHTML = `<a class="dropdown-item" href="/search.html?query=${category.toLowerCase()}">${category.toLowerCase()}</a>`;
                 ctgBox.appendChild(ctg);
             });
         })

@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -193,7 +194,7 @@ body{
 }
 
 .playback-menu {
-    position: fixed;
+    position: absolute;
     z-index: 1100;
     bottom: 0;
     width: 50vw; /* Ensure the playback menu takes the full width of the viewport */
@@ -204,6 +205,7 @@ body{
     align-items: center;
     justify-content: center;
     padding: 5px;
+    bottom: 15%;
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
     display: block;
 }
