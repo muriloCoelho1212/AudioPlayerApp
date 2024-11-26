@@ -32,11 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         div.style.overflow = 'hidden';
                         div.classList.add('songCard');
     
-                        const songbtn = document.createElement('button');
+                        const songText = document.createElement('h5');
                         const img = document.createElement('img');
-                        songbtn.innerHTML = `${entry.title} || ${entry.duration}`;
-                        songbtn.style.height = '200px';
-                        songbtn.style.zIndex = '1050';
+                        songText.innerHTML = `${entry.title} <br> ${entry.duration}`;
+                        songText.style.textAlign = 'center';
                         img.src = entry.cover;
                         img.style.maxWidth = '100%';
                         img.style.height = '100px';
@@ -44,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         img.style.maxHeight = '300px';
     
                         div.appendChild(img);
-                        div.appendChild(songbtn);
-                        songbtn.addEventListener('click', () => {
+                        div.appendChild(songText);
+                        div.addEventListener('click', () => {
                             audioPlayer.src = entry.faixa;
                             audioPlayer.play();
                             playbackMenu.style.display = 'block';
@@ -62,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             const centerY = rect.height / 2;
                             const deltaX = x - centerX;
                             const deltaY = y - centerY;
-                            const rotateX = (deltaY / centerY) * 10; // Adjust the tilt intensity
-                            const rotateY = (deltaX / centerX) * -10; // Adjust the tilt intensity
+                            const rotateX = (deltaY / centerY) * 30; // Adjust the tilt intensity
+                            const rotateY = (deltaX / centerX) * -30; // Adjust the tilt intensity
                             div.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                         });
 

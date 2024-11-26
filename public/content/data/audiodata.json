@@ -234,7 +234,7 @@
         "duration":"03:43",
         "description":"no description",
         "score":"5",
-        "faixa":"media/audio/Another_One_Bites_the_Dust.mp3",
+        "faixa":"media/audio/Another_One_Bites_The_Dust.mp3",
         "url":"."
     },
     {
@@ -262,7 +262,7 @@
         "duration":"02:52",
         "description":"no description",
         "score":"3",
-        "faixa":"media/audio/Young_at_Heart.mp3",
+        "faixa":"media/audio/Young_At_Heart.mp3",
         "url":"."
     },
     {
@@ -276,7 +276,7 @@
         "duration":"03:07",
         "description":"no description",
         "score":"3",
-        "faixa":"media/audio/Don't_Cry_Joe.mp3",
+        "faixa":"media/audio/Dont_Cry_Joe.mp3",
         "url":"."
     },
     {
@@ -346,7 +346,7 @@
         "duration":"01:32",
         "description":"no description",
         "score":"3.5",
-        "faixa":"media/audio/Ta_OK.mp3",
+        "faixa":"media/audio/Tá_OK.mp3",
         "url":"."
     },
     {
@@ -388,7 +388,7 @@
     "duration":"08:35",
     "description":"A legendary metal track",
     "score":"5",
-    "faixa":"media/audio/Master_of_Puppets.mp3",
+    "faixa":"media/audio/Master_Of_Puppets.mp3",
     "url":"."
     },
     {
@@ -444,7 +444,7 @@
     "duration":"03:50",
     "description":"A heartfelt pagode track",
     "score":"4.6",
-    "faixa":"media/audio/Coracao_Radiante.mp3",
+    "faixa":"media/audio/Coração_Radiante.mp3",
     "url":"."
     },
     {
@@ -458,7 +458,7 @@
     "duration":"04:20",
     "description":"A romantic pagode song",
     "score":"4.7",
-    "faixa":"media/audio/Ta_Vendo_Aquela_Lua.mp3",
+    "faixa":"media/audio/Tá_Vendo_Aquela_Lua.mp3",
     "url":"."
     },
     {
@@ -486,7 +486,7 @@
     "duration":"02:30",
     "description":"A popular funk song",
     "score":"4.3",
-    "faixa":"media/audio/Parado_no_Bailao.mp3",
+    "faixa":"media/audio/Parado_no_Bailão.mp3",
     "url":"."
     }
 ]
