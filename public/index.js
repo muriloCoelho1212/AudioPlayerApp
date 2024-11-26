@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ctgBox = document.getElementById('categories');
     const searchBtn = document.getElementById('search');
+    const cover = document.getElementById('cover');
     console.log(`got ctg: ${ctgBox}`);
 
     const audioPlayer = document.getElementById('audioPlayer');
@@ -13,10 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const songSrc = localStorage.getItem('currentSong');
     const songTimestamp = localStorage.getItem('songStamp');
+    const songCover = localStorage.getItem('songCover');
 
     if(songSrc){
         audioPlayer.src = songSrc;
         if(songTimestamp) audioPlayer.currentTime = songTimestamp;
+        if(songCover) cover.src = songCover;
         audioPlayer.play();
         playbackMenu.style.display = 'block';
         duration.textContent = localStorage.getItem('songDuration');

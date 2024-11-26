@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             duration.textContent = entry.duration;
                             localStorage.setItem('songDuration', entry.duration);
                             localStorage.setItem('currentSong', audioPlayer.src);
+                            localStorage.setItem('songCover', entry.cover);
                         });
                         songlist.appendChild(div);
 
