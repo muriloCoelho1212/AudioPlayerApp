@@ -17,10 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const duration = document.getElementById('duration');
 
     // Restaurar último termo pesquisado na barra de pesquisa
-    const lastSearch = localStorage.getItem('lastSearch');
-    if (lastSearch) {
-        queryInput.value = lastSearch;
-    }
+    queryInput.placeholder = query;
 
     fetch('content/data/audiodata.json')
         .then(response => response.json())
@@ -112,9 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (audioPlayer.paused) {
             audioPlayer.play();
             playPauseBtn.textContent = 'Pause';
+            localStorage.setItem('isPlaying', true);
         } else {
             audioPlayer.pause();
             playPauseBtn.textContent = 'Play';
+            localStorage.setItem('isPlaying', false);
         }
     });
 
@@ -147,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (songSrc) {
         audioPlayer.src = songSrc;
         if (songTimestamp) audioPlayer.currentTime = songTimestamp;
-        audioPlayer.play();
+        if(localStorage.getItem('isPlaying') == true) audioPlayer.play();
         playbackMenu.style.display = 'block';
         duration.textContent = localStorage.getItem('songDuration');
         cover.src = localStorage.getItem('songCover');
