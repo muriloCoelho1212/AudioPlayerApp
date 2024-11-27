@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const query = urlParams.get('query');
     const ctgBox = document.getElementById('categories');
     const cover = document.getElementById('cover');
+    const cardContextMenu = document.getElementById('contextMenu');
 
     // playback stuff
     const audioPlayer = document.getElementById('audioPlayer');
@@ -61,6 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             cover.src = entry.cover;
                         });
+                        div.addEventListener('contextmenu', (e) => {
+                            e.preventDefault();
+                            cardContextMenu.style.display = 'block';
+                            cardContextMenu.style.left = `${e.clientX}px`;
+                            cardContextMenu.style.top = `${e.clientY}px`;
+                            console.log(`cursor position: ${e.clientX},${e.clientY}`);
+                        });
                         songlist.appendChild(div);
 
                         div.addEventListener('mousemove', (e) => {
@@ -79,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         div.addEventListener('mouseleave', () => {
                             div.style.transform = 'rotateX(0) rotateY(0)';
                         });
+
                     }
                 });
             }
@@ -139,6 +148,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const secs = Math.floor(seconds % 60);
         return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
     }
+
+    cardContextMenu.addEventListener('mouseleave', () => {
+        cardContextMenu.style.display = 'none';
+    });
+
+    const ctmenuChildren = cardContextMenu.childNodes;
+    ctmenuChildren.forEach(e => {
+        e.addEventListener('click', () => {
+            cardContextMenu.style.display = 'none';
+        })
+    }); 
 
     const songSrc = localStorage.getItem('currentSong');
     const songTimestamp = localStorage.getItem('songStamp');

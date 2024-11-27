@@ -218,7 +218,7 @@ body{
 }
 
 #playPauseBtn, #skipBtn {
-    background-color: #007bff; /* Primary color */
+    background-color: #3d3d3d; /* Primary color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -228,12 +228,12 @@ body{
 }
 
 #playPauseBtn:hover, #skipBtn:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
+    background-color: #696969; /* Darker shade for hover effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 #playPauseBtn:active, #skipBtn:active {
-    background-color: #004085; /* Even darker shade for active state */
+    background-color: #474747; /* Even darker shade for active state */
     transform: scale(1); /* Reset scale on active */
 }
 
@@ -250,7 +250,7 @@ body{
     appearance: none;
     width: 15px;
     height: 15px;
-    background: #007bff;
+    background: #ffffff;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -258,7 +258,7 @@ body{
 #progressBar::-moz-range-thumb {
     width: 15px;
     height: 15px;
-    background: #007bff;
+    background: #4e4e4e;
     cursor: pointer;
     border-radius: 50%;
 }
