@@ -7,3 +7,10 @@
     top: -25%;
     left: -25%;
 }
+
+.sidebarIcon{
+    position: absolute;
+    left: 90%;
+    width: 32px;
+    height: 32px;
+}

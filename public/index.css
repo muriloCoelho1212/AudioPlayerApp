@@ -93,14 +93,31 @@ body{
     height: 100px;
 }
 
+#background{
+    left: 0;
+    top: 0; 
+    width: 100vw;
+    height: 100vh;
+}
+
+#backgroundOverlay{
+    position: absolute;
+    background-color: linear-gradient(90deg, black, rgba(0,0,0,0));
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 50vw;
+}
+
 #sidebar{
     position: fixed;
     z-index: 1150;
     height: 100%;
     top: 0;
-    left: -340px;
+    left: -300px;
     width: 250px;
     transition: 0.3s;
+    z-index: 800;
 }
 
 #sidebar:hover{
@@ -276,4 +293,11 @@ button {
     width: 250px;
     height: 250px;
     border-radius: 10%;
+}
+
+.sidebarIcon{
+    position: absolute;
+    left: 90%;
+    width: 32px;
+    height: 32px;
 }

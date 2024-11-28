@@ -14,3 +14,5 @@ class SongInfo
         this.url = url;
     }
 }
+
+export {SongInfo}

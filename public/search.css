@@ -94,7 +94,7 @@ body{
     z-index: 1150;
     height: 100%;
     top: 0;
-    left: -340px;
+    left: -300px;
     width: 250px;
     transition: 0.3s;
 }
@@ -354,6 +354,13 @@ button {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
     font-weight: bold;
     width: 120%;
+}
+
+.sidebarIcon{
+    position: absolute;
+    left: 90%;
+    width: 32px;
+    height: 32px;
 }
 
 

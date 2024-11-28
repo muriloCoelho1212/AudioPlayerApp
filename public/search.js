@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             audioPlayer.play();
                             playbackMenu.style.display = 'block';
                             duration.textContent = entry.duration;
+                            
                             localStorage.setItem('songDuration', entry.duration);
                             localStorage.setItem('currentSong', audioPlayer.src);
                             localStorage.setItem('songCover', entry.cover);
@@ -116,13 +117,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     playPauseBtn.addEventListener('click', () => {
         if (audioPlayer.paused) {
+            localStorage.setItem('isPlaying', true);
             audioPlayer.play();
             playPauseBtn.textContent = 'Pause';
-            localStorage.setItem('isPlaying', true);
         } else {
+            localStorage.setItem('isPlaying', false);
             audioPlayer.pause();
             playPauseBtn.textContent = 'Play';
-            localStorage.setItem('isPlaying', false);
         }
     });
 
@@ -166,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (songSrc) {
         audioPlayer.src = songSrc;
         if (songTimestamp) audioPlayer.currentTime = songTimestamp;
-        if(localStorage.getItem('isPlaying') == true) audioPlayer.play();
+        audioPlayer.play();
         playbackMenu.style.display = 'block';
         duration.textContent = localStorage.getItem('songDuration');
         cover.src = localStorage.getItem('songCover');
