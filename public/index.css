@@ -53,13 +53,34 @@ h3, h4, h5, h6{
     font-family: 'Istok Web', sans-serif;
 }
 
-body{
+:root {
+    --gradient-r: black; /* Cor preta */
+    --gradient-t: red;   /* Cor vermelha */
+}
+
+body {
+    background: linear-gradient(45deg, var(--gradient-r), var(--gradient-t));
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: visible;
 }
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 .contentBox{
     display: flex;
@@ -123,11 +144,6 @@ body{
 #sidebar:hover{
     cursor: pointer;
     left:0%;
-}
-
-body{
-
-    background: #d1d5db;
 }
 
 .height{
@@ -215,7 +231,7 @@ body{
     z-index: 1100;
     bottom: 0;
     width: 50vw; /* Ensure the playback menu takes the full width of the viewport */
-    background-color: none;
+    background-color: black;
     color: white;
     display: flex;
     flex-direction: column;

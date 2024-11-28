@@ -38,6 +38,7 @@
 
 h1{
     font-family: 'Josefin Sans', sans-serif;
+    color: white;
 }
 
 h2{
@@ -48,12 +49,27 @@ h3, h4, h5, h6{
     font-family: 'Istok Web', sans-serif;
 }
 
-body{
+ody {
+    background: linear-gradient(45deg, var(--gradient-r), var(--gradient-t));
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: visible;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .contentBox{
@@ -103,11 +119,6 @@ body{
     cursor: pointer;
     left:0%;
 }
-
-body{
-    background: #d1d5db;
-}
-
 .height{
     height: 100vh;
 }
@@ -397,6 +408,7 @@ button {
 
     #pageTitle{
         text-align: center;
+        color: white;   
     }
 
     
