@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const query = urlParams.get('query');
     const ctgBox = document.getElementById('categories');
     const cover = document.getElementById('cover');
+    const cardContextMenu = document.getElementById('contextMenu');
 
     // playback stuff
     const audioPlayer = document.getElementById('audioPlayer');
@@ -17,10 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const duration = document.getElementById('duration');
 
     // Restaurar último termo pesquisado na barra de pesquisa
-    const lastSearch = localStorage.getItem('lastSearch');
-    if (lastSearch) {
-        queryInput.value = lastSearch;
-    }
+    queryInput.placeholder = query;
 
     fetch('content/data/audiodata.json')
         .then(response => response.json())
@@ -55,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             audioPlayer.play();
                             playbackMenu.style.display = 'block';
                             duration.textContent = entry.duration;
+                            
                             localStorage.setItem('songDuration', entry.duration);
                             localStorage.setItem('currentSong', audioPlayer.src);
                             localStorage.setItem('songCover', entry.cover);
@@ -63,6 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
                             localStorage.setItem('songAuthor', entry.author);
 
                             cover.src = entry.cover;
+                        });
+                        div.addEventListener('contextmenu', (e) => {
+                            e.preventDefault();
+                            cardContextMenu.style.display = 'block';
+                            cardContextMenu.style.left = `${e.clientX}px`;
+                            cardContextMenu.style.top = `${e.clientY}px`;
+                            console.log(`cursor position: ${e.clientX},${e.clientY}`);
                         });
                         songlist.appendChild(div);
 
@@ -82,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         div.addEventListener('mouseleave', () => {
                             div.style.transform = 'rotateX(0) rotateY(0)';
                         });
+
                     }
                 });
             }
@@ -110,9 +117,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     playPauseBtn.addEventListener('click', () => {
         if (audioPlayer.paused) {
+            localStorage.setItem('isPlaying', true);
             audioPlayer.play();
             playPauseBtn.textContent = 'Pause';
         } else {
+            localStorage.setItem('isPlaying', false);
             audioPlayer.pause();
             playPauseBtn.textContent = 'Play';
         }
@@ -140,6 +149,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const secs = Math.floor(seconds % 60);
         return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
     }
+
+    cardContextMenu.addEventListener('mouseleave', () => {
+        cardContextMenu.style.display = 'none';
+    });
+
+    const ctmenuChildren = cardContextMenu.childNodes;
+    ctmenuChildren.forEach(e => {
+        e.addEventListener('click', () => {
+            cardContextMenu.style.display = 'none';
+        })
+    }); 
 
     const songSrc = localStorage.getItem('currentSong');
     const songTimestamp = localStorage.getItem('songStamp');

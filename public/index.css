@@ -53,13 +53,34 @@ h3, h4, h5, h6{
     font-family: 'Istok Web', sans-serif;
 }
 
-body{
+:root {
+    --gradient-r: black; /* Cor preta */
+    --gradient-t: red;   /* Cor vermelha */
+}
+
+body {
+    background: linear-gradient(45deg, var(--gradient-r), var(--gradient-t));
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: visible;
 }
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 .contentBox{
     display: flex;
@@ -93,24 +114,36 @@ body{
     height: 100px;
 }
 
+#background{
+    left: 0;
+    top: 0; 
+    width: 100vw;
+    height: 100vh;
+}
+
+#backgroundOverlay{
+    position: absolute;
+    background-color: linear-gradient(90deg, black, rgba(0,0,0,0));
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 50vw;
+}
+
 #sidebar{
     position: fixed;
     z-index: 1150;
     height: 100%;
     top: 0;
-    left: -340px;
+    left: -300px;
     width: 250px;
     transition: 0.3s;
+    z-index: 800;
 }
 
 #sidebar:hover{
     cursor: pointer;
     left:0%;
-}
-
-body{
-
-    background: #d1d5db;
 }
 
 .height{
@@ -198,7 +231,7 @@ body{
     z-index: 1100;
     bottom: 0;
     width: 50vw; /* Ensure the playback menu takes the full width of the viewport */
-    background-color: none;
+    background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
@@ -218,7 +251,7 @@ body{
 }
 
 #playPauseBtn, #skipBtn {
-    background-color: #007bff; /* Primary color */
+    background-color: #3d3d3d; /* Primary color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -228,12 +261,12 @@ body{
 }
 
 #playPauseBtn:hover, #skipBtn:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
+    background-color: #696969; /* Darker shade for hover effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 #playPauseBtn:active, #skipBtn:active {
-    background-color: #004085; /* Even darker shade for active state */
+    background-color: #474747; /* Even darker shade for active state */
     transform: scale(1); /* Reset scale on active */
 }
 
@@ -250,7 +283,7 @@ body{
     appearance: none;
     width: 15px;
     height: 15px;
-    background: #007bff;
+    background: #ffffff;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -258,7 +291,7 @@ body{
 #progressBar::-moz-range-thumb {
     width: 15px;
     height: 15px;
-    background: #007bff;
+    background: #4e4e4e;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -276,4 +309,11 @@ button {
     width: 250px;
     height: 250px;
     border-radius: 10%;
+}
+
+.sidebarIcon{
+    position: absolute;
+    left: 90%;
+    width: 32px;
+    height: 32px;
 }

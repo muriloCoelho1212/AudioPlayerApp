@@ -38,6 +38,7 @@
 
 h1{
     font-family: 'Josefin Sans', sans-serif;
+    color: white;
 }
 
 h2{
@@ -48,12 +49,27 @@ h3, h4, h5, h6{
     font-family: 'Istok Web', sans-serif;
 }
 
-body{
+ody {
+    background: linear-gradient(45deg, var(--gradient-r), var(--gradient-t));
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: visible;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .contentBox{
@@ -94,7 +110,7 @@ body{
     z-index: 1150;
     height: 100%;
     top: 0;
-    left: -340px;
+    left: -300px;
     width: 250px;
     transition: 0.3s;
 }
@@ -103,11 +119,6 @@ body{
     cursor: pointer;
     left:0%;
 }
-
-body{
-    background: #d1d5db;
-}
-
 .height{
     height: 100vh;
 }
@@ -320,6 +331,50 @@ button {
     height: 100px;
 }
 
+.cardContextMenu{
+    position: absolute;
+    border-radius: 10%;
+    background-color: whitesmoke;
+    z-index: 1300;
+    display: none;
+}
+
+.contextMenuItems{
+    gap: 5px;
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    align-items: center;
+    background-color: inherit;
+    list-style: none;
+    padding: 0;
+    border-radius: 10%;
+    margin: 0;
+}
+
+.contextMenuItems li{
+    background-color: inherit;
+    width: 100%;
+    text-align: center;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.contextMenuItems li:hover{
+    background-color: rgb(218, 218, 218);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    width: 120%;
+}
+
+.sidebarIcon{
+    position: absolute;
+    left: 90%;
+    width: 32px;
+    height: 32px;
+}
+
+
 @media screen and (min-width: 736px) and (max-width: 950px){
     .contentBox{
         width: 100%;
@@ -353,6 +408,8 @@ button {
 
     #pageTitle{
         text-align: center;
+        color: white;   
     }
 
+    
 }
